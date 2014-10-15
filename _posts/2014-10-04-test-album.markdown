@@ -6,12 +6,14 @@ categories: jekyll update
 ---
 This post is to display facebook pictures from NareshPS albums.
 
-<script src="http://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
 <div id="fb-root"></div>
-
-<div id="fb-root"></div>
-
-<script type="text/javascript">FB.init({ appId: 784994034891445, status: true});</script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=784994034891445&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
