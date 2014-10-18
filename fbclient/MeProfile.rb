@@ -50,13 +50,15 @@ class MeProfile
     @photos_graph_object ||= {}
     albums = Array.new
     album_list.each do |album|
+      print album
       @photos_graph_object[album.id] ||= @user.get_object("#{album.id}#{@@PhotosUriPostfix}")
       @photos_graph_object[album.id][@@Photos][@@Data].each do |photo_graph_object|
         photo = Photo.new(photo_graph_object[@@Id], photo_graph_object[@@Caption])
+        print photo
         photo_graph_object[@@Images].each do |image_graph_object|
           image = Image.new(image_graph_object[@@Source], image_graph_object[@@Width], image_graph_object[@@Height])
-          photo.push(image)
           print image
+          photo.push(image)
         end
         album.push(photo)
       end

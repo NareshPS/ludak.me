@@ -1,0 +1,7 @@
+---
+layout: post
+title:  Japan
+categories: travel japan
+---
+This post is to display facebook pictures from NareshPS albums.
+

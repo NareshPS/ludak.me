@@ -14,6 +14,6 @@ class Album < Array
   end
 
   def to_s()
-    return "|Id: #{@id} Name: #{@name} Description: #{@description} # of Photos: #{self.length}|"
+    return "|Id: #{@id} Name: #{@name} Description: #{@description}"
   end
 end

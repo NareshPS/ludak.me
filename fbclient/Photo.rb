@@ -13,6 +13,6 @@ class Photo < Array
   end
 
   def to_s()
-    return "|Id: #{@id} Caption: #{@caption} # of Copies: #{self.length}|"
+    return "|Id: #{@id} Caption: #{@caption}"
   end
 end
