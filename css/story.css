@@ -1,0 +1,11 @@
+
+.storyImage {
+  border: 1px solid #558abb;
+}
+
+.storyCaption {
+  background: #fafbfc url('/assets/caption-background.png') top center;
+  border-left: 6px solid #558abb;
+  padding-left: 6px;
+  text-align: left;
+}

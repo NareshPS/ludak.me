@@ -3,5 +3,18 @@ layout: post
 title:  Japan
 categories: travel japan
 ---
-This post is to display facebook pictures from NareshPS albums.
+I always wanted to go to Japan. Something about their culture always intrigued me. Not exactly sure what that is. Japan is a developed country where people have extraordinary sense of humility. Its' quite and clean. Hi-tech. Tokyo is a charming city. My first ever bullet train ride was a round trip from Tokyo to Hiroshima on Shinkansen trains. Roughly 1000 kms traveled in 4 hours, with stunning ocean views and lush green rice fields. Visited Hiroshima peace memorial and Miajima island. Missed Mt. Fuji. Tried the delicious Okonomiyaki. Made new friends. Thanks YuTakatron and Shinya, and others for great company.
 
+<div class="storyCollection">
+  <div class="storyItem" align="center">
+    <div class="storyImage">
+      <img src="https://scontent-a.xx.fbcdn.net/hphotos-xap1/t31.0-8/10514281_10152229898530636_8209177204711570230_o.jpg" />
+    </div>
+    <div class="storyCaption">
+      Caption
+    </div>
+  </div>
+
+  <div class="storySlider">
+  </div>
+</div>
