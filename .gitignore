@@ -3,3 +3,8 @@ _site/
 fbclient/fb_test.rb
 .c9/
 fbclient/data
+js/pgwslider.js
+js/pgwslider.min.js
+css/pgwslider.min.css
+css/pgwslider.css
+json/pgwslider.jquery.json
