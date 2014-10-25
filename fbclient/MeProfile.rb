@@ -1,8 +1,8 @@
 require 'koala'
 
-require './Album'
-require './Image'
-require './Photo'
+require_relative './Album'
+require_relative './Image'
+require_relative './Photo'
 
 class MeProfile
   attr_reader :id
@@ -38,7 +38,7 @@ class MeProfile
     @albums_graph_object ||= @user.get_object(@@AlbumsUri)
 
     albums = @albums_graph_object[@@Albums][@@Data].map do |album_graph_object|
-      album = Album.new album_graph_object[@@Id], album_graph_object[@@Name], album_graph_object[@@Description]
+      album = Album.new album_graph_object[@@Id], album_graph_object[@@Name], album_graph_object[@@Description].to_s.gsub(/@\[[0-9]+:[0-9]+:([^\]]+)\]/, '\1')
     end
 
     albums.delete_if do |album|
@@ -50,14 +50,11 @@ class MeProfile
     @photos_graph_object ||= {}
     albums = Array.new
     album_list.each do |album|
-      print album
       @photos_graph_object[album.id] ||= @user.get_object("#{album.id}#{@@PhotosUriPostfix}")
       @photos_graph_object[album.id][@@Photos][@@Data].each do |photo_graph_object|
-        photo = Photo.new(photo_graph_object[@@Id], photo_graph_object[@@Caption])
-        print photo
+        photo = Photo.new(photo_graph_object[@@Id], photo_graph_object[@@Name])
         photo_graph_object[@@Images].each do |image_graph_object|
           image = Image.new(image_graph_object[@@Source], image_graph_object[@@Width], image_graph_object[@@Height])
-          print image
           photo.push(image)
         end
         album.push(photo)

@@ -2,7 +2,7 @@
 title: ludak.me
 email: ludak@ludak.me
 description: > # this means to ignore newlines until "baseurl:"
-  ludak.me is an account of thoughts, and events I find interesting.
+  ludak.me is an account of thoughts, and events that I find interesting.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://ludak.me" # the base hostname & protocol for your site
 twitter_username: _NareshPS

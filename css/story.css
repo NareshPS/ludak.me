@@ -4,8 +4,10 @@
 }
 
 .storyCaption {
-  background: #fafbfc url('/assets/caption-background.png') top center;
-  border-left: 6px solid #558abb;
+  /*background: #fafbfc url('/assets/caption-background.png') top center;*/
+  background-color: rgba(255,149,0,.1);
+  /*border-left: 6px solid #558abb;*/
+  border-left: 6px solid rgba(255,149,0,.5);
   padding-left: 6px;
   text-align: left;
 }

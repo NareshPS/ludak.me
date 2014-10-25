@@ -1,0 +1,21 @@
+---
+layout: post
+title:  Japan
+categories: travel japan
+---
+{% assign album = site.data.Japan %}
+{{ album.ivars[":@description"] }}
+
+<script src="{{ "/js/story.js" | prepend: site.url }}"></script>
+<div class="storyCollection">
+  {% for photo in album.internal %}
+  <div class="storyItem" align="center">
+    <div class="storyImage">
+      <img src="{{ photo.internal[0].source }}"/>
+    </div>
+    <div class="storyCaption">
+    {{ photo.ivars[":@caption"] }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
