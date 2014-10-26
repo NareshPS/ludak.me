@@ -1,4 +1,4 @@
-@media screen and (min-width: 800px) {
+/*@media screen and (min-width: 800px) {
   body:before, body:after {
       content: "";
       position: fixed;
@@ -20,19 +20,21 @@
       border-left: 10px solid #ac4142;
       border-right: 10px solid #ac4142;
   }
-}
+}*/
 
 .post {
 }
 
 .storyImage {
-  /*border: 1px solid #558abb;*/
   border: 1px solid #ac4142;
+  height: 100%;
+  position: relative;
 }
 
 .storyImage img {
   border-radius: 0px;
-  display: inline-block;
+  display: block;
+  max-height: 100%;
   max-width: 100%;
   margin: 0;
   padding: 0;
