@@ -2,7 +2,7 @@
   body:before, body:after {
       content: "";
       position: fixed;
-      background: #000000;
+      background: #ac4142;
       left: 0;
       right: 0;
       height: 10px;
@@ -17,8 +17,8 @@
   }
 
   body {
-      border-left: 10px solid black;
-      border-right: 10px solid black;
+      border-left: 10px solid #ac4142;
+      border-right: 10px solid #ac4142;
   }
 }
 
@@ -26,7 +26,8 @@
 }
 
 .storyImage {
-  border: 1px solid #558abb;
+  /*border: 1px solid #558abb;*/
+  border: 1px solid #ac4142;
 }
 
 .storyImage img {
