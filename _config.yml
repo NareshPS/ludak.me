@@ -20,3 +20,6 @@ paginate:            5
 author:
   name:              Naresh Singh
   url:               https://twitter.com/_NareshPS
+
+# Custom vars
+version:             1.0.0
