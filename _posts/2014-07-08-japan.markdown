@@ -12,9 +12,7 @@ categories: travel japan
   {% for photo in album.internal %}
 
   <div class="storyItem" align="center">
-    <div class="storyImage">
-      <img src="{{ photo.internal[0].source }}"/>
-    </div>
+    <img src="{{ photo.internal[0].source }}"/>
     <div class="storyCaption">
 
     {{ photo.ivars[":@caption"] }}

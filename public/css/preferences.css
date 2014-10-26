@@ -31,14 +31,8 @@
   position: relative;
 }
 
-.storyImage img {
-  border-radius: 0px;
-  display: block;
-  max-height: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  vertical-align: bottom;
+.storyItem img {
+  border: 1px solid rgba(172,65,66,.5);
 }
 
 .storyCaption {
