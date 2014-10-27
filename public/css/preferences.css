@@ -45,3 +45,11 @@
 .storyItem {
   margin-bottom: 50px;
 }
+
+.headerLinks {
+  border: 0px;
+  float: right;
+  margin: 0px;
+  opacity: 0.5;
+  text-align: right;
+}
