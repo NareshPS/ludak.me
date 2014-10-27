@@ -1,0 +1,7 @@
+---
+layout: post
+title:  Rome
+data: Rome
+categories: travel rome
+---
+{% include story.html %}

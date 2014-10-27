@@ -1,25 +1,7 @@
 ---
 layout: post
 title:  Peru
+data: Peru
 categories: travel peru
 ---
-{% assign album = site.data.Peru %}
-{{ album.ivars[":@description"] }}
-
-<script src="{{ "/js/story.js" | prepend: site.url }}"></script>
-<div class="storyCollection">
-
-  {% for photo in album.internal %}
-
-  <div class="storyItem" align="center">
-    <img src="{{ photo.internal[0].source }}"/>
-    <div class="storyCaption">
-
-    {{ photo.ivars[":@caption"] }}
-
-    </div>
-  </div>
-
-  {% endfor %}
-
-</div>
+{% include story.html %}
