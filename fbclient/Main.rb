@@ -1,4 +1,4 @@
-require_relative './MeProfile'
+require_relative './Profile'
 require_relative './AccessToken'
 
 require 'optparse'
