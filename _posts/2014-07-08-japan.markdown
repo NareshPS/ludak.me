@@ -4,4 +4,4 @@ title:  Japan
 data: Japan
 categories: travel japan
 ---
-{% include story.html %}
+{% include lazystory.html %}

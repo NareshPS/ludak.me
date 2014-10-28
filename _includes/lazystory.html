@@ -1,0 +1,26 @@
+{% assign album = site.data[page.data] %}
+{{ album.ivars[":@description"] }}
+
+<script src="{{ site.baseurl }}public/js/jail.js"></script>
+<script>
+  $(function(){
+    $('img.lazy').jail();
+  });
+</script>
+
+<div class="storyCollection">
+
+  {% for photo in album.internal %}
+
+  <div class="storyItem" align="center">
+    <img class="lazy" src="{{ site.baseurl }}public/small.jpg" data-src="{{ photo.internal[0].source }}"/>
+    <div class="storyCaption">
+
+    {{ photo.ivars[":@caption"] }}
+
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>

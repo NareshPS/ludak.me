@@ -4,4 +4,4 @@ title:  Netherlands
 data: Netherlands
 categories: travel netherlands
 ---
-{% include story.html %}
+{% include lazystory.html %}

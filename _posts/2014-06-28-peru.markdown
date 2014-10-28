@@ -4,4 +4,4 @@ title:  Peru
 data: Peru
 categories: travel peru
 ---
-{% include story.html %}
+{% include lazystory.html %}

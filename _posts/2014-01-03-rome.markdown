@@ -4,4 +4,4 @@ title:  Rome
 data: Rome
 categories: travel rome
 ---
-{% include story.html %}
+{% include lazystory.html %}
