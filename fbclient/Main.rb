@@ -21,9 +21,9 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-meprofile = MeProfile.new(AccessToken.get)
-albums = meprofile.albums @AlbumList
-meprofile.photos albums
+profile = Profile.new(AccessToken.get)
+albums = profile.albums @AlbumList
+profile.photos albums
 
 albums.each do |album|
   # Delete big photos
