@@ -13,7 +13,7 @@
   {% for photo in album.internal %}
 
   <div class="storyItem" align="center">
-    <img class="lazy" src="{{ site.baseurl }}public/small.jpg" data-src="{{ photo.internal[0].source }}"/>
+    <img class="lazy" src="{{ site.baseurl }}public/placeholder.png" data-src="{{ photo.internal[0].source }}"/>
     <div class="storyCaption">
 
     {{ photo.ivars[":@caption"] }}
