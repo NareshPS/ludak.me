@@ -1,7 +1,6 @@
 {% assign album = site.data[page.data] %}
 {{ album.ivars[":@description"] }}
 
-<script src="{{ "/js/story.js" | prepend: site.url }}"></script>
 <div class="storyCollection">
 
   {% for photo in album.internal %}
