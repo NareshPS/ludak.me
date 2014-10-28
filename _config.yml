@@ -14,7 +14,7 @@ tagline:             'ludak.me'
 description:         'ludak.me is an account of thoughts, and events that I find interesting. Find me on twitter <a href="https://twitter.com/_NareshPS" target="_blank">@_NareshPS</a>.'
 url:                 http://ludak.me
 baseurl:             /
-paginate:            5
+paginate:            2
 
 # About/contact
 author:
