@@ -2,6 +2,7 @@
 layout: post
 title:  Japan
 data: Japan
+comments: true
 categories: travel japan
 ---
 {% include lazystory.html %}
