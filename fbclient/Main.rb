@@ -4,7 +4,7 @@ require_relative './AccessToken'
 require 'optparse'
 require 'yaml'
 
-@AlbumList = %w{Netherlands Rome Barcelona Peru Japan}
+@AlbumList = %w{Alaska}
 @AlbumDataDir = '_data'
 @AlbumDataFileExtension = '.yaml'
 
