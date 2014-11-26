@@ -1,6 +1,5 @@
 .c9/
 .sass-cache/
-_data
 _site/
 fbclient/data
 fbclient/AccessToken.rb
