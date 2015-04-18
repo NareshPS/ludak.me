@@ -3,6 +3,8 @@ require 'koala'
 require_relative './Album'
 require_relative './Image'
 require_relative './Photo'
+require_relative './Post'
+require_relative './Video'
 
 class Profile
   attr_reader :id
@@ -16,11 +18,17 @@ class Profile
   @@Height = "height"
   @@Id = "id"
   @@Images = "images"
+  @@Link = "link"
   @@Me = "me"
   @@MeFieldsAlbums = "/me?fields=albums{name,description}"
+  @@MeFieldsPosts = "/me?fields=posts{id,message,type,link}"
+  @@Message = "message"
   @@Name = "name"
   @@Photos = "photos"
+  @@Posts = "posts"
+  @@PostTypeVideo = "video"
   @@Source = "source"
+  @@Type = "type"
   @@Width = "width"
 
   def initialize(access_token)
@@ -32,6 +40,22 @@ class Profile
   def unravel()
     @basic_graph ||= @user.get_object(@@Me)
     @id ||= @basic_graph ['id']
+  end
+
+  def videos()
+    @posts_graph_object ||= @user.get_object(@@MeFieldsPosts)
+
+    posts = @posts_graph_object[@@Posts][@@Data].map do |post_graph_object|
+      post = Post.new post_graph_object[@@Id], post_graph_object[@@Message], post_graph_object[@@Type], post_graph_object[@@Link]
+    end
+
+    posts.delete_if do |post|
+      true if not post.type.eql? @@PostTypeVideo
+    end
+
+    videos = posts.map do |post|
+      video = Video.new post.id, post.message, post.link
+    end
   end
 
   def albums(album_list = [])
