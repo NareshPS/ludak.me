@@ -1,0 +1,9 @@
+
+---
+layout: post
+title:  Colorado
+data: Colorado
+comments: true
+categories: travel colorado
+---
+{% include lazystory.html %}
