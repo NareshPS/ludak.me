@@ -1,0 +1,8 @@
+---
+layout: post
+title:  Ecuador
+data: Ecuador
+comments: true
+categories: travel ecuador
+---
+{% include lazystory.html %}
