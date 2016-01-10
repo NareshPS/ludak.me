@@ -1,12 +1,8 @@
 # Dependencies
 markdown:            redcarpet
-highlighter:         pygments
 
 # Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-relative_permalinks: true
 
 # Setup
 title:               ludak.me
@@ -14,7 +10,6 @@ tagline:             'ludak.me'
 description:         'ludak.me is an account of thoughts, and events that I find interesting. Find me on twitter <a href="https://twitter.com/_NareshPS" target="_blank">@_NareshPS</a>.'
 url:                 http://ludak.me
 baseurl:             /
-paginate:            1
 
 # About/contact
 author:
