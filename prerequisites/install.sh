@@ -2,6 +2,9 @@
 
 LUDAK_HOME=~/ludak.me
 
+# run in $LUDAK_HOME
+cd $LUDAK_HOME
+
 # dropbox ppa
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 set release (lsb_release -sc)
@@ -26,13 +29,17 @@ sudo gem install bundler
 sudo gem update
 
 # build website
-cd ${LUDAK_HOME} && jekyll build && cd -
+sudo bundle install
+jekyll build
 
 # setup webserver
-sudo copy configuration/ludak.me.conf /etc/apache2/sites-available
+sudo copy $LUDAK_HOME/configuration/ludak.me.conf /etc/apache2/sites-available
 sudo rm /etc/apache2/sites-enabled/000-default.conf
 sudo ln -s /etc/apache2/sites-available/ludak.me.conf /etc/apache2/sites-enabled/ludak.me.conf
 
 sudo ln -s ~/ludak.me/_site /var/www/ludak.me
 
 sudo service apache2 start
+
+# return to run directory
+cd -
