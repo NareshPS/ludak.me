@@ -1,8 +1,11 @@
+# Plugins
+gems:               ['jekyll-paginate']
+
 # Dependencies
 markdown:            redcarpet
 
-# Permalinks
-permalink:           pretty
+# Pagination
+paginate: 1
 
 # Setup
 title:               ludak.me
