@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+# test framework
+gem 'minitest'
+
+# style checker
+gem 'rubocop', require: false
+
+# facebook graph API
+gem 'koala'
