@@ -1,5 +1,5 @@
 # Plugins
-gems:               ['jekyll-paginate']
+gems:               ['jekyll-paginate', 'emoji_for_jekyll']
 
 # Dependencies
 markdown:            redcarpet
