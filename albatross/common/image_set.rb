@@ -9,7 +9,7 @@ module Albatross
     attr_reader :images, :caption
 
     def initialize(images, caption = nil)
-      ThrowIf::is_nil? images, "images"
+      ThrowIf.is_nil? images, "images"
       @images = images
       @caption = caption
     end

@@ -15,13 +15,10 @@ module Albatross
 
     def test_initialize_nil_params
       -> {Image.new nil, 1, 1, "jpg"}.must_raise ArgumentError
-      -> {Image.new "test", nil, 1, "jpg"}.must_raise ArgumentError
-      -> {Image.new "test", 1, nil, "jpg"}.must_raise ArgumentError
-      -> {Image.new "test", 1, 1, nil}.must_raise ArgumentError
     end
 
     def test_to_s
-      assert_equal '|Name: test_image Width: 10 Height: 5 Type: jpg|', @image.to_s
+      assert_equal '|Source: test_image Width: 10 Height: 5 Type: jpg|', @image.to_s
     end
   end
 end

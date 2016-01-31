@@ -7,7 +7,7 @@ module Albatross
   class Album
     attr_reader :title, :image_sets, :caption
 
-    def initialize(title:, image_sets:, caption: nil)
+    def initialize(title, image_sets, caption = nil)
       ThrowIf.is_nil? title, "title"
       ThrowIf.is_nil? image_sets, "image_sets"
       @title = title
