@@ -1,7 +1,6 @@
-.c9/
-.sass-cache/
-_site/
+www/_site/
 fbclient/data
 fbclient/AccessToken.rb
-Gemfile.lock
+www/Gemfile.lock
 albatross/ludak.me.facebook.rb
+albatross/Gemfile.lock
