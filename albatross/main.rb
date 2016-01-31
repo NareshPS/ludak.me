@@ -1,6 +1,9 @@
 #! /usr/bin/env ruby
 
 require 'koala'
+require_relative 'datastore'
+require_relative 'ludak.me.facebook'
+require_relative 'common/throw_if'
 require_relative 'facebook/constants'
 require_relative 'facebook/profile'
 
@@ -8,17 +11,19 @@ require_relative 'facebook/profile'
   Entry point
 =end
 
-module Albatross
-  Koala.config.api_version = "v2.5"
-  access_token = "CAACEdEose0cBABOkuwrBqpwnHbAoqmek9mgyx4YnL3dl5aKLKNSWdEGGSRVRiImExwA1q83E1XGoLwkCZAsYCJ3xaOkZA9CZCaGezIF09140VtrZCoE5ZCRiLNwb1jFwZCqSZAG2xMZBNhRzVN4mokhulZB5XaatZA96MZBsZAvEfGcUBQCpXZCE9jQb5ntCP3kWM7PjFbbuDC12n2sVDxIet7bIK"
-  object_id = 10153209001115636
-  user = Koala::Facebook::API.new(access_token)
-  profile = Facebook::Profile.new user, "ludak.me"
-  puts profile.album "Test Album"
-  #image = user.get_object("#{object_id}?fields=name,images")
-  #album = user.get_connections("ludak.me", "albums")
-  #album = user.put_connections("ludak.me", "albums", {:name => "Test Album", :caption => "test caption"})
-  #user.put_picture(image['images'][0]['source'], {:message => image['name']}, album[Facebook::Constants::ID])
-  #user.put_picture()
-  #profile = Profile.new user
+def get_metadata_file album
+  Albatross::ThrowIf.is_nil? album, "album"
+  "/home/ludak/ludak.me/storage/dropbox/#{album}.yml"
+end
+
+albums = ['Barcelona']
+Koala.config.api_version = "v2.5"
+object_id = 10153209001115636
+access_token = "CAACEdEose0cBALLa5wkwqJnkNsh5Iuq4ZByX3W0ewN5TqCgw8G5V8ZBPfmwsHjPGzxB5q8ZCvfvOCYk13ktNoEw3m3G0sda5P108EUQEwZCeRkGJMM7gpvULMONZA2Ek2FnETdCQNgGSQN5POvcbM8PstP71U50b1UfINpeSIOdQVH0bXPvPAROWKv6gINRZCRiaV0ZCyJZBlgZDZD"
+user = Koala::Facebook::API.new(access_token)
+profile = Albatross::Facebook::Profile.new user, "ludak.me"
+
+albums.each do |album|
+  datastore = Albatross::Datastore.new get_metadata_file album
+  profile.album = datastore.get
 end

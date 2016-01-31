@@ -4,3 +4,4 @@ _site/
 fbclient/data
 fbclient/AccessToken.rb
 Gemfile.lock
+albatross/ludak.me.facebook.rb

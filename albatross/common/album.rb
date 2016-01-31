@@ -4,19 +4,20 @@ require_relative 'throw_if'
   Representation for an album.
 =end
 module Albatross
-  class Album
-    attr_reader :title, :image_sets, :caption
+  class Album < Array
+    attr_reader :title
+    attr_accessor :caption, :id
 
-    def initialize(title, image_sets, caption = nil)
+    def initialize(title, caption = nil, id = nil)
       ThrowIf.is_nil? title, "title"
-      ThrowIf.is_nil? image_sets, "image_sets"
       @title = title
-      @image_sets = image_sets
       @caption = caption
+      @id = id
     end
 
     def to_s
-      "|Title: #{title} Image Sets: #{image_sets.to_s} Caption: #{caption}|"
+      image_set_s = self.map {|image_set| image_set.to_s}.join ","
+      "|Id: #{id} Title: #{title} Image Sets: #{image_set_s} Caption: #{caption}|"
     end
   end
 end

@@ -15,8 +15,9 @@ sudo apt-get update
 sudo apt-get install build-essential ruby2.0 ruby2.0-dev apache2 nodejs libmagickwand-dev dropbox python-gpgme
 
 # use ruby 2.0
-sudo rm /usr/bin/ruby
+sudo rm /usr/bin/ruby /usr/bin/irb
 sudo ln -s /usr/bin/ruby2.0 /usr/bin/ruby
+sudo ln -s /usr/bin/irb2.0 /usr/bin/irb
 
 # setup gem 2.0
 sudo gem install rubygems-update

@@ -5,17 +5,16 @@ require_relative 'throw_if'
   Multi-size representation of an image.
 =end
 module Albatross
-  class ImageSet
-    attr_reader :images, :caption
+  class ImageSet < Array
+    attr_reader :caption
 
-    def initialize(images, caption = nil)
-      ThrowIf.is_nil? images, "images"
-      @images = images
+    def initialize(caption = nil)
       @caption = caption
     end
 
     def to_s
-      "|Caption: #{caption} Count: #{images.size} Images: #{images.to_s}|"
+      image_s = self.map {|image| image.to_s}.join ","
+      "|Caption: #{caption} Count: #{self.size} Images: #{image_s}|"
     end
   end
 end

@@ -21,16 +21,16 @@ module Albatross
 
       def album=(album_object)
         ThrowIf.is_nil? album_object, "album_object"
-        remote_album = self.album album_object.title
+        album = self.album album_object.title
 
-        if remote_album.nil?
-          remote_album = @connection.put_connections(profile, Constants::ALBUMS, {:name => album_object.title, :caption => album_object.caption})
+        if album.nil?
+          @connection.put_connections(profile, Constants::ALBUMS, {:name => album_object.title, :caption => album_object.caption})
+          album = self.album album_object.title
         end
 
-        unless remote_album.nil?
-          album_object.image_sets.each do |image_set|
-            image = image_set.images[0]
-            @connection.put_picture(image.source, {:message => image_set.caption}, remote_album[Facebook::Constants::ID])
+        unless album.nil? or album.size != 0
+          album_object.each do |image_set|
+            @connection.put_picture(image_set.first.source, {:message => image_set.caption}, album.id)
           end
         end
       end
@@ -39,11 +39,12 @@ module Albatross
         ThrowIf.is_nil? name, "name"
         results = @connection.get_connections(profile, Constants::ALBUMS, {Constants::FIELDS => [Constants::ID, Constants::NAME, Constants::DESCRIPTION]})
         result = results.select {|result| result[Constants::NAME] === name}
+        album = nil
 
-        unless result.nil?
-          album_object = result.first
+        unless result.nil? or result.size == 0
+          remote_object = result.first
           results = @connection.get_connections(
-                      album_object[Constants::ID],
+                      remote_object[Constants::ID],
                       Constants::PHOTOS,
                       {
                         Constants::FIELDS => [
@@ -51,65 +52,24 @@ module Albatross
                           Constants::IMAGES
                         ]
                       })
-          Album.new(album_object[Constants::NAME], image_sets_from_results(results), album_object[Constants::DESCRIPTION])
+          album = Album.new(name, remote_object[Constants::DESCRIPTION], remote_object[Constants::ID])
+          populate_album_from_results(album, results)
         end
+        album
       end
 
       private
-      def image_sets_from_results(results)
-        image_sets = Array.new
+      def populate_album_from_results(album, results)
         unless results.nil?
           results.each do |result|
-            images = Array.new
+            image_set = ImageSet.new result[Constants::NAME]
             result[Constants::IMAGES].each do |image|
-              images.push(Image.new(image[Constants::SOURCE], image[Constants::WIDTH], image[Constants::HEIGHT]))
+              image_set.push Image.new(image[Constants::SOURCE], image[Constants::WIDTH], image[Constants::HEIGHT])
             end
-            image_sets.push(ImageSet.new(images, result[Constants::NAME]))
+            album.push image_set
           end
         end
-        image_sets
       end
     end
   end
 end
-
-=begin
-
-    def albums(album_list = [])
-      @albums_graph_object ||= @user.get_object(@@MeFieldsAlbums)
-
-      albums = @albums_graph_object[@@Albums][@@Data].map do |album_graph_object|
-        album = Album.new album_graph_object[@@Id], album_graph_object[@@Name], album_graph_object[@@Description].to_s.gsub(/@\[[0-9]+:[0-9]+:([^\]]+)\]/, '\1')
-      end
-
-      albums.delete_if do |album|
-        true if not album_list.include? album.name
-      end
-    end
-
-    def photos(album_list)
-      albums = Array.new
-      album_list.each do |album|
-        photos_graph_object = @user.get_connections("#{album.id}", @@AlbumFieldsPhotos)
-        while photos_graph_object
-          photos_graph_object.each do |photo_graph_object|
-            photo = Photo.new(photo_graph_object[@@Id], photo_graph_object[@@Name])
-            photo_graph_object[@@Images].each do |image_graph_object|
-              image = Image.new(image_graph_object[@@Source], image_graph_object[@@Width], image_graph_object[@@Height])
-              photo.push(image)
-            end
-            album.push(photo)
-          end
-          photos_graph_object = photos_graph_object.next_page
-        end
-        albums.push(album)
-      end
-    end
-
-    def to_s()
-      return "|Id: #{@id}|"
-    end
-
-    private :unravel
-  end
-=end
