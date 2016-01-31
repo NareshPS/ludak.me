@@ -34,11 +34,11 @@ sudo bundle install
 jekyll build
 
 # setup webserver
-sudo copy $LUDAK_HOME/configuration/ludak.me.conf /etc/apache2/sites-available
+sudo copy $LUDAK_HOME/prerequisites/configuration/ludak.me.conf /etc/apache2/sites-available
 sudo rm /etc/apache2/sites-enabled/000-default.conf
 sudo ln -s /etc/apache2/sites-available/ludak.me.conf /etc/apache2/sites-enabled/ludak.me.conf
 
-sudo ln -s ~/ludak.me/_site /var/www/ludak.me
+sudo ln -s $LUDAK_HOME/www/_site /var/www/ludak.me
 
 sudo service apache2 start
 
