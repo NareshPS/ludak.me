@@ -32,6 +32,7 @@ module Albatross
 
         unless album.nil?
           album_object_slice = album_object.slice(album.size, album_object.size - album.size)
+          puts album_object_slice.size
           unless album_object_slice.nil?
             puts "Images remaining to upload: #{album_object_slice.size}"
             album_object_slice.each do |image_set|
@@ -53,6 +54,7 @@ module Albatross
         unless result.nil? or result.empty?
           puts "Found it!"
           remote_object = result.first
+          album = Album.new(name, remote_object[Constants::DESCRIPTION], remote_object[Constants::ID])
           results = @connection.get_connections(
                       remote_object[Constants::ID],
                       Constants::PHOTOS,
@@ -62,8 +64,15 @@ module Albatross
                           Constants::IMAGES
                         ]
                       })
-          album = Album.new(name, remote_object[Constants::DESCRIPTION], remote_object[Constants::ID])
-          populate_album_from_results(album, results)
+          loop do
+            populate_album_from_results(album, results)
+            results = results.next_page
+
+            if results.nil?
+              break
+            end
+          end
+
           puts "Found #{album.size} pictures in the album."
         end
         album
