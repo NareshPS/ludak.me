@@ -18,12 +18,13 @@ end
 
 albums = ['Barcelona']
 Koala.config.api_version = "v2.5"
-object_id = 10153209001115636
-access_token = "CAACEdEose0cBALLa5wkwqJnkNsh5Iuq4ZByX3W0ewN5TqCgw8G5V8ZBPfmwsHjPGzxB5q8ZCvfvOCYk13ktNoEw3m3G0sda5P108EUQEwZCeRkGJMM7gpvULMONZA2Ek2FnETdCQNgGSQN5POvcbM8PstP71U50b1UfINpeSIOdQVH0bXPvPAROWKv6gINRZCRiaV0ZCyJZBlgZDZD"
+access_token = "CAACEdEose0cBAAZAxMnX2RgN4iAFMr2MAjmVa70ICQ5N8D6l9miyAYR937s3GQZBwgrXcbqvsWEwPElRZAVA93FNi28rUExlO8uL802YIZCzUm4cxOsWTnNJv8f41A2XOOZBWjEQqPmtw6vVHKzWkqtRR6qteIPjOzDWISFTWw5O1MmgAQI526eZAfu8at8wsU29FWkX9ZAYv4aZCJNGM2Og"
 user = Koala::Facebook::API.new(access_token)
 profile = Albatross::Facebook::Profile.new user, "ludak.me"
 
 albums.each do |album|
-  datastore = Albatross::Datastore.new get_metadata_file album
+  metadata_file = get_metadata_file album
+  puts "Processing: #{metadata_file}."
+  datastore = Albatross::Datastore.new metadata_file
   profile.album = datastore.get
 end
