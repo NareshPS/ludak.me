@@ -13,12 +13,12 @@ require_relative 'facebook/profile'
 
 def get_metadata_file album
   Albatross::ThrowIf.is_nil? album, "album"
-  "/home/ludak/ludak.me/storage/dropbox/#{album}.yml"
+  "_data/#{album}.yml"
 end
 
-albums = ['Barcelona']
+albums = ['Barcelona', 'Netherlands', 'Rome', 'Peru', 'Japan']
 Koala.config.api_version = "v2.5"
-access_token = "CAACEdEose0cBAAZAxMnX2RgN4iAFMr2MAjmVa70ICQ5N8D6l9miyAYR937s3GQZBwgrXcbqvsWEwPElRZAVA93FNi28rUExlO8uL802YIZCzUm4cxOsWTnNJv8f41A2XOOZBWjEQqPmtw6vVHKzWkqtRR6qteIPjOzDWISFTWw5O1MmgAQI526eZAfu8at8wsU29FWkX9ZAYv4aZCJNGM2Og"
+access_token = "CAACEdEose0cBADsFgWC7NHKb5vkFIDxLIroh6ZCtHpOFmRDz6HkaK3oZAAvZBD2h63COb4SjBboBxcZAg6z6VBHCJ4M9Y65WWWI4S2xOjlC5lUhQXv8f0Nu9ZAfx57pz458Xfssvh25PZBHHcJjA1GG2Xlsj7ywOZA8GUAzkFQElTxnm6529fZC0OcfqEtgZASOkXVDJbwCRWyQZDZD"
 user = Koala::Facebook::API.new(access_token)
 profile = Albatross::Facebook::Profile.new user, "ludak.me"
 
