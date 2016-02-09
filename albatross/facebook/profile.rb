@@ -25,11 +25,10 @@ module Albatross
 
         if album.nil?
           puts "Album: #{album} not found. Create one!"
-          @connection.put_connections(profile, Constants::ALBUMS, {:name => album_object.title, :caption => album_object.caption})
+          @connection.put_connections(profile, Constants::ALBUMS, {Constants::NAME => album_object.title, Constants::DESCRIPTION => album_object.caption})
           album = self.album album_object.title
           puts "Created album: #{album}"
         end
-
         unless album.nil?
           album_object_slice = album_object.slice(album.size, album_object.size - album.size)
           puts album_object_slice.size
@@ -37,7 +36,7 @@ module Albatross
             puts "Images remaining to upload: #{album_object_slice.size}"
             album_object_slice.each do |image_set|
               puts "Uploading image: #{image_set.to_s}"
-              @connection.put_picture(image_set.first.source, {:message => image_set.caption}, album.id)
+              @connection.put_picture(image_set.first.source, {Constants::MESSAGE => image_set.caption}, album.id)
             end
           end
         end

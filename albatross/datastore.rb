@@ -36,10 +36,12 @@ module Albatross
     def contents_to_album contents
       album = Album.new(contents[NAME], contents[DESCRIPTION])
 
-      contents[IMAGES].each do |image|
-        image_set = ImageSet.new image[CAPTION]
-        image_set.push(Image.new image[SOURCE])
-        album.push image_set
+      unless contents[IMAGES].nil?
+        contents[IMAGES].each do |image|
+          image_set = ImageSet.new image[CAPTION]
+          image_set.push(Image.new image[SOURCE])
+          album.push image_set
+        end
       end
       album
     end

@@ -16,7 +16,7 @@ def get_metadata_file album
   "_data/#{album}.yml"
 end
 
-albums = ['Barcelona', 'Netherlands', 'Rome', 'Peru', 'Japan']
+albums = ['Barcelona', 'Netherlands', 'Rome', 'Peru', 'Japan', 'Ecuador']
 Koala.config.api_version = "v2.5"
 access_token = "CAACEdEose0cBADsFgWC7NHKb5vkFIDxLIroh6ZCtHpOFmRDz6HkaK3oZAAvZBD2h63COb4SjBboBxcZAg6z6VBHCJ4M9Y65WWWI4S2xOjlC5lUhQXv8f0Nu9ZAfx57pz458Xfssvh25PZBHHcJjA1GG2Xlsj7ywOZA8GUAzkFQElTxnm6529fZC0OcfqEtgZASOkXVDJbwCRWyQZDZD"
 user = Koala::Facebook::API.new(access_token)
