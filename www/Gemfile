@@ -15,4 +15,4 @@ gem 'jekyll-paginate'
 gem 'fastimage'
 
 # emoji
-gem 'emoji_for_jekyll'
+gem 'jemoji'
