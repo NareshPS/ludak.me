@@ -8,3 +8,6 @@ gem 'rubocop', require: false
 
 # facebook graph API
 gem 'koala'
+
+# azure blob storage
+gem 'azure'
