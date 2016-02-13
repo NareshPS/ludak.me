@@ -1,8 +1,0 @@
----
-layout: post
-title:  Alaska
-data: Alaska
-comments: true
-categories: travel alaska
----
-{% include lazystory.html %}
