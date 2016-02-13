@@ -1,4 +1,4 @@
-{% assign album = site.data.dropbox[page.data] %}
+{% assign album = site.data[page.storage][page.data] %}
 {{ album['description'] }}
 
 <script src="{{ site.baseurl }}public/js/jail.js"></script>

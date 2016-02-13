@@ -3,6 +3,7 @@ layout: post
 title:  Colorado
 data: Colorado
 comments: true
+storage: dropbox
 categories: travel colorado
 ---
 {% include lazystory.html %}
