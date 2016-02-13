@@ -10,7 +10,7 @@ def get_metadata_file album
   "data/dropbox/#{album}.yml"
 end
 
-albums = ['Barcelona']#, 'Netherlands', 'Rome', 'Peru', 'Japan', 'Colorado', 'Ecuador']
+albums = ['Barcelona', 'Netherlands', 'Rome', 'Peru', 'Japan', 'Colorado', 'Ecuador']
 DOWNLOAD_DIR = '/tmp'
 
 albums.each do |album|
@@ -19,9 +19,13 @@ albums.each do |album|
   datastore = Albatross::Datastore.new metadata_file
   azure_storage = Albatross::Azure::BlobStorage.new(album.downcase, DOWNLOAD_DIR)
   album_object = datastore.get
-
-  image_url = album_object.first.first.source
-  image_filename = Albatross::Dropbox::Utilities.url_to_filename(image_url)
-  puts image_filename
-  azure_storage.put image_filename, image_url
+  existing_blobs = azure_storage.list
+  album_object.each do |image_set|
+    image_url = image_set.first.source
+    image_filename = Albatross::Dropbox::Utilities.url_to_filename(image_url)
+    unless existing_blobs.include? image_filename
+      puts "Uploading #{album_object.title}/#{image_filename} to Azure"
+      azure_storage.put image_filename, image_url
+    end
+  end
 end
