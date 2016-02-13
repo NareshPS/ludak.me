@@ -12,7 +12,7 @@ sudo add-apt-repository "deb http://linux.dropbox.com/ubuntu $release main"
 sudo apt-get update
 
 # necessary packages
-sudo apt-get install build-essential ruby2.0 ruby2.0-dev apache2 nodejs libmagickwand-dev dropbox python-gpgme
+sudo apt-get install build-essential ruby2.0 ruby2.0-dev apache2 nodejs libmagickwand-dev dropbox python-gpgme ruby-rspec-core
 
 # use ruby 2.0
 sudo rm /usr/bin/ruby /usr/bin/irb
