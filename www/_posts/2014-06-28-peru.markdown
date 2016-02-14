@@ -3,6 +3,7 @@ layout: post
 title:  Peru
 data: Peru
 comments: true
+storage: azure
 categories: travel peru
 ---
 {% include lazystory.html %}

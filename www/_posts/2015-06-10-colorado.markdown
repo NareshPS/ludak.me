@@ -3,7 +3,7 @@ layout: post
 title:  Colorado
 data: Colorado
 comments: true
-storage: dropbox
+storage: azure
 categories: travel colorado
 ---
 {% include lazystory.html %}

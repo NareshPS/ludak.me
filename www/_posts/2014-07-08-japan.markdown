@@ -3,7 +3,7 @@ layout: post
 title:  Japan
 data: Japan
 comments: true
-storage: dropbox
+storage: azure
 categories: travel japan
 ---
 {% include lazystory.html %}

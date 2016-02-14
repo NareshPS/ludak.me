@@ -3,7 +3,7 @@ layout: post
 title:  Barcelona
 data: Barcelona
 comments: true
-storage: dropbox
+storage: azure
 categories: travel barcelona
 ---
 {% include lazystory.html %}

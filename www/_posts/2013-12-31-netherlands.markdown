@@ -3,7 +3,7 @@ layout: post
 title:  Netherlands
 data: Netherlands
 comments: true
-storage: dropbox
+storage: azure
 categories: travel netherlands
 ---
 {% include lazystory.html %}
