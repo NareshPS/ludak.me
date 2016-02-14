@@ -5,7 +5,8 @@ require_relative 'throw_if'
 =end
 module Albatross
   class Image
-    attr_reader :source, :width, :height, :type
+    attr_accessor :source
+    attr_reader :width, :height, :type
 
     def initialize(source, width = 0, height = 0, type = "jpg")
       ThrowIf.is_nil? source, "source"
