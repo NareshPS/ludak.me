@@ -6,22 +6,21 @@ require_relative 'throw_if'
 module Albatross
   class Image
     attr_accessor :source
-    attr_reader :width, :height, :type
+    attr_reader :scale, :type
 
-    def initialize(source, width = 0, height = 0, type = "jpg")
+    def initialize(source, scale = 1.0, type = "jpg")
       ThrowIf.is_nil? source, "source"
       @source = source
-      @width = width
-      @height = height
+      @scale = scale
       @type = type
     end
 
     def qualified_name
-      "#{source}_#{width}X#{height}.#{type}"
+      "#{source}_#{scale}.#{type}"
     end
 
     def to_s()
-      return "|Source: #{source} Width: #{width} Height: #{height} Type: #{type}|"
+      return "|Source: #{source} Scale: #{scale} Type: #{type}|"
     end
   end
 end

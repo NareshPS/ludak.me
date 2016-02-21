@@ -14,3 +14,6 @@ gem 'azure'
 
 # require all
 gem 'require_all'
+
+# image resizing library
+gem 'mini_magick'

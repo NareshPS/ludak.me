@@ -46,10 +46,13 @@ module Albatross
           contents[Constants::IMAGES] = Array.new
 
           album.each do |image_set|
-            image = Hash.new
-            image[Constants::CAPTION] = image_set.caption
-            image[Constants::SOURCE] = image_set.first.source
-            contents[Constants::IMAGES].push(image)
+            images = Hash.new
+            images[Constants::CAPTION] = image_set.caption
+            images[Constants::IMAGESET] = Array.new
+            image_set.each do |image|
+              images[Constants::IMAGESET].push({Constants::SOURCE => image.source, Constants::SCALE => image.scale})
+            end
+            contents[Constants::IMAGES].push(images)
           end
         end
         contents
