@@ -66,3 +66,10 @@
 .headerLinks a:hover {
   opacity: 1.0;
 }
+
+.emoji {
+  border: 0px;
+  float: left;
+  height: 25px;
+  width:  25px;
+}
