@@ -1,4 +1,5 @@
 require 'mini_magick'
+require 'uri'
 
 module Albatross
   class ResizedImages
@@ -6,16 +7,26 @@ module Albatross
       @minpx = minpx
     end
 
+    def self.scale_for_factor(image, scale_factor, target)
+      width = (image.width * scale_factor).round
+      height = (image.height * scale_factor).round
+      image.resize("#{width}x#{height}")
+      image.format(image.type)
+      image.write(target)
+      target
+    end
+
     def generate(name, source, destination)
       basename = File.basename(name, '.*')
       extension = File.extname(name)
-      image = MiniMagick::Image.open(source)
+      image = MiniMagick::Image.open(URI.escape(source))
       scale_factors = compute_scale_factors(image.width > image.height ? image.width : image.height)
       scaled_images = Hash.new
 
       scale_factors.each do |scale_factor|
         target = File.join(destination, "#{basename}_#{scale_factor}#{extension}")
-        scaled_images[scale_factor]= scale_for_factor(image, scale_factor, target)
+        ResizedImages.scale_for_factor(image, scale_factor, target)
+        scaled_images[scale_factor] = target
       end
       scaled_images
     end
@@ -31,16 +42,6 @@ module Albatross
           scale_factor = scale_factor / 2
         end
         scale_factors
-    end
-
-    private
-    def scale_for_factor(image, scale_factor, target)
-      width = (image.width * scale_factor).round
-      height = (image.height * scale_factor).round
-      image.resize("#{width}x#{height}")
-      image.format(image.type)
-      image.write(target)
-      target
     end
   end
 end

@@ -9,6 +9,7 @@ module Albatross
       DESCRIPTION = 'description'
       SCALE = 'scale'
       IMAGESET = 'imageset'
+      ORIGINAL = 'original'
     end
   end
 end
