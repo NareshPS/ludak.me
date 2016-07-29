@@ -38,8 +38,14 @@
 .storyCaption {
   background-color: rgba(255,149,0,.1);
   border-left: 6px solid rgba(172,65,66,.5);
+  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 17px;
   padding-left: 6px;
   text-align: left;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 .storyItem {
