@@ -2,6 +2,7 @@
 {{ album['description'] | emoticon}}
 
 <script src="{{ site.baseurl }}public/js/jail.js"></script>
+
 <script>
   $(function(){
     $('img.lazy').jail({ offset:5000 });
@@ -14,7 +15,7 @@
   {% assign scaled_image = image.imageset | where: 'scale', '0.5' %}
 
   <div class="storyItem" align="center">
-    <img class="lazy storyImage" src="{{ site.baseurl }}public/placeholder.png" data-src="{{ scaled_image[0].source }}"/>
+    <img class="lazy storyImage" src="{{ site.baseurl }}public/placeholder.png" data-src="{{ scaled_image[0].source }}" onClick="openStoryImageOverlay(this.src);"/>
       <div class="storyCaption">
     {{ image.caption | emoticon }}
       </div>

@@ -6,7 +6,7 @@
   {% for photo in album.internal %}
 
   <div class="storyItem" align="center">
-    <img src="{{ photo.internal[0].source }}"/>
+    <img src="{{ photo.internal[0].source }}" onClick="openStoryImageOverlay()"/>
     <div class="storyCaption">
 
     {{ photo.ivars[":@caption"] }}

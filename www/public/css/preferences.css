@@ -61,10 +61,20 @@
   opacity: 1.0;
 }
 
-.emoji {
-  display: inline;
-  height: 25px;
-  margin: 0 0 0rem;
-  vertical-align: middle;
-  width:  25px;
+/*Story image overlay div*/
+.story-image-overlay {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#story-image-overlay-img {
+  display: block;
+  margin: auto;
 }
