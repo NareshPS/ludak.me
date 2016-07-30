@@ -1,5 +1,5 @@
 {% assign album = site.data[page.storage][page.data] %}
-{{ album['description'] }}
+{{ album['description'] | emoticon}}
 
 <script src="{{ site.baseurl }}public/js/jail.js"></script>
 <script>
@@ -16,7 +16,7 @@
   <div class="storyItem" align="center">
     <img class="lazy storyImage" src="{{ site.baseurl }}public/placeholder.png" data-src="{{ scaled_image[0].source }}"/>
       <div class="storyCaption">
-    {{ image.caption | emojify }}
+    {{ image.caption | emoticon }}
       </div>
   </div>
 

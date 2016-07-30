@@ -13,6 +13,3 @@ gem 'jekyll-paginate'
 
 # gets image sizes
 gem 'fastimage'
-
-# emoji
-gem 'gemoji'

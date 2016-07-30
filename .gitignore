@@ -4,4 +4,3 @@ fbclient/data
 fbclient/AccessToken.rb
 www/_site/
 www/Gemfile.lock
-www/images

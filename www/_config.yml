@@ -1,5 +1,5 @@
 # Plugins
-gems:               ['jekyll-paginate', 'gemoji']
+gems:               ['jekyll-paginate']
 
 # Dependencies
 markdown:            redcarpet
@@ -22,12 +22,14 @@ author:
 # Custom vars
 version:             1.0.0
 
-#gemoji
-emoji_dir:           ./images/emoji
-
-#emoji mapping
-emoji_mapping:
-  - simple_name: ':)'
-    emoji_name: ':smile:'
-  - simple_name: ':P'
-    emoji_name: ':stuck_out_tongue_closed_eyes:'
+#emoticon mapping
+#code source: http://www.alt-codes.net/smiley_alt_codes.php
+emoticon_mapping:
+  - name: ':)'
+    unicode_name: '&#x1F603;'
+  - name: ':P'
+    unicode_name: '&#x1F61D;'
+  - name: ':('
+    unicode_name: '&#x1F641;'
+  - name: ':O'
+    unicode_name: '&#x1F62F;'
