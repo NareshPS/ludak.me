@@ -26,12 +26,6 @@
 }
 
 .storyImage {
-  border: 1px solid #ac4142;
-  height: 100%;
-  position: relative;
-}
-
-.storyItem img {
   border: 1px solid rgba(172,65,66,.5);
 }
 
@@ -68,8 +62,9 @@
 }
 
 .emoji {
-  border: 0px;
-  float: left;
+  display: inline;
   height: 25px;
+  margin: 0 0 0rem;
+  vertical-align: middle;
   width:  25px;
 }
