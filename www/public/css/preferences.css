@@ -88,11 +88,7 @@
 .sidebar-toggle
 {
   /*size and positioning*/
-  position: fixed;
   top: 0.5rem;
-  z-index: 1;
-
-  /*appearance*/
   background-color: transparent;
 }
 
@@ -123,4 +119,21 @@
 .content
 {
   padding-top: 4rem;
+}
+
+/*headroom*/
+.headroom
+{
+  transition: transform .25s ease-in-out;
+  will-change: transform;
+}
+
+.headroom--pinned
+{
+  transform: translateY(0);
+}
+
+.headroom--unpinned
+{
+    transform: translateY(-100%);
 }

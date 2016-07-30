@@ -14,6 +14,11 @@ It is built with Jekyll and Poole. It uses Lanyon as the base theme.
 
 [Joshua Lande](http://joshualande.com) has written a great [article](http://joshualande.com/jekyll-github-pages-poole/) on getting started with Jekyll and Poole.
 
+Plugins:
+
+* [jQuery](https://jquery.com/)
+* [Headroom.js](http://wicky.nillia.ms/headroom.js)
+
 Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/NareshPS/ludak.me/issues/new) or [ask me on Twitter](https://twitter.com/_NareshPS).
 
 Thanks for visiting!
