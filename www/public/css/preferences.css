@@ -69,7 +69,7 @@
   height: 100%;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 #story-image-overlay-img {
@@ -82,4 +82,45 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+/*sidebar-toggle customizations*/
+.sidebar-toggle
+{
+  /*size and positioning*/
+  position: fixed;
+  top: 0.5rem;
+  z-index: 1;
+
+  /*appearance*/
+  background-color: transparent;
+}
+
+/*masthead customizations*/
+.masthead
+{
+  /*size and positioning*/
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  /*appearance*/
+  background-color: rgba(0,0,0,0.85);
+  border-color: rgba(0,0,0,1);
+  border-width: thick;
+}
+
+/*masthead-title customizations*/
+.masthead-title
+{
+  /*appearance*/
+  opacity: 1;
+}
+
+/*content customizations*/
+.content
+{
+  padding-top: 4rem;
 }
