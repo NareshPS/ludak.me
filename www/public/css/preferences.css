@@ -22,7 +22,14 @@
   }
 }*/
 
-.post {
+.theme-base-08 .sidebar
+{
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.sidebar a
+{
+  color: #ac4142;
 }
 
 .storyImage {
