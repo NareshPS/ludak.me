@@ -73,12 +73,13 @@
 }
 
 #story-image-overlay-img {
-  bottom: 0;
   display: block;
-  left: 0;
   margin: auto;
-  position: fixed;
-  right: 0;
-  top: 0;
+  position: absolute;
   vertical-align: middle;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
