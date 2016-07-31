@@ -1,5 +1,6 @@
 {% assign album = site.data[page.storage][page.data] %}
-{{ album['description'] | emoticon}}
+{% assign description = album['description'] | emoticon %}
+{{ description | emfirst }}
 
 <script src="{{ site.baseurl }}public/js/jail.js"></script>
 
