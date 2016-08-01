@@ -1,21 +1,24 @@
-function openStoryImageOverlay(source)
+var storyImageOverlayImg = '#story-image-overlay-img'
+var storyImageOverlayDiv = '#story-image-overlay-div'
+
+/*open story image overlay*/
+function openStoryImageOverlay(source, caption)
 {
   var w = $(window).width();
   var h = $(window).height();
 
-  var overlay = document.getElementById("story-image-overlay-div")
-  overlay.style.display = "block";
+  $(storyImageOverlayDiv).css("display","block");
 
-  var overlayImage = document.getElementById("story-image-overlay-img")
-  overlayImage.src = source
-  overlayImage.style.maxHeight = h + 'px'
-  overlayImage.style.maxWidth = w + 'px'
+  $(storyImageOverlayImg).attr('src', source)
+  $(storyImageOverlayImg).attr('alt', caption)
+  $(storyImageOverlayImg).css("maxWidth", w);
+  $(storyImageOverlayImg).css("maxHeight", h);
 }
 
+/*close story image overlay*/
 function closeStoryImageOverlay()
 {
-  var overlay = document.getElementById("story-image-overlay-div")
-  overlay.style.display = "none";
+  $(storyImageOverlayDiv).css("display","none");
 }
 
 /*hide masthead on scroll down.*/
@@ -27,8 +30,8 @@ $(function() {
 
 /*reload story image overlay on resize*/
 $(window).resize(function() {
-  if ($("#story-image-overlay-div").is(":visible"))
+  if ($(storyImageOverlayDiv).is(":visible"))
   {
-    openStoryImageOverlay($("#story-image-overlay-img").attr("src"));
+    openStoryImageOverlay($(storyImageOverlayImg).attr("src"));
   }
 });
