@@ -28,6 +28,11 @@
   height: 100%;
 }
 
+@mixin .round-corners
+{
+  border-radius: 5px;
+}
+
 .theme-base-08 .sidebar
 {
   background-color: rgba(0,0,0, 0.85);
@@ -94,15 +99,18 @@
 
 #story-image-overlay-img
 {
+  /*appearance*/
+  .include round-corners;
   display: block;
-  margin: auto;
-  position: absolute;
-  vertical-align: middle;
 
+  /*size and position*/
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  margin: auto;
+  position: absolute;
+  vertical-align: middle;
 }
 
 /*story-image-overlay-content-div*/
@@ -117,6 +125,7 @@
 .story-image-overlay-caption
 {
   /*appearance*/
+  .include round-corners;
   background-color: rgba(0,0,0, 0.85);
   transition: width 1s ease;
 

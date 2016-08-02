@@ -25,7 +25,6 @@ function reloadStoryImageOverlayCaption()
   var captionDivLeftPos = $(storyImageOverlayImg).css('margin-left');
   var captionDivBottomPos = $(storyImageOverlayImg).css('margin-bottom');
 
-
   $(storyImageOverlayCaption).css('left', captionDivLeftPos);
   $(storyImageOverlayCaption).css('bottom', captionDivBottomPos);
   $(storyImageOverlayCaption).css('width', $(storyImageOverlayImg).width());
