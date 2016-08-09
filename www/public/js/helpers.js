@@ -50,8 +50,13 @@ $(window).resize(function()
 $(function ()
   {
     /*onClick handler for story image overlay image*/
-    $(storyImageOverlayImg).on('click', function()
+    $(storyImageOverlayContentDiv).on('click', function(event)
       {
+        if (event.target != this)
+        {
+          return;
+        }
+
         $(storyImageOverlayDiv).css("display","none");
       });
 
