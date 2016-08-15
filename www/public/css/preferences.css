@@ -35,12 +35,23 @@
 
 .theme-base-08 .sidebar
 {
-  background-color: rgba(0,0,0, 0.85);
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.theme-base-08
+{
+  color: #633E3E;
+  background-color: #FAFAFA;
+}
+
+.content
+{
+  background-color: #FFFFFF;
 }
 
 .sidebar a
 {
-  color: #ac4142;
+  color: #AC4142;
 }
 
 .storyImage
