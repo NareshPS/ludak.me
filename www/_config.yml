@@ -26,10 +26,12 @@ version:             1.0.0
 #code source: http://www.alt-codes.net/smiley_alt_codes.php
 emoticon_mapping:
   - name: ':)'
-    unicode_name: '&#x1F603;'
+    unicode_name: '&#x1F642;'
   - name: ':P'
     unicode_name: '&#x1F61D;'
   - name: ':('
     unicode_name: '&#x1F641;'
   - name: ':O'
     unicode_name: '&#x1F62F;'
+  - name: ':D'
+    unicode_name: '&#x1F606;'
