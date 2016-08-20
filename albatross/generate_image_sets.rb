@@ -33,7 +33,7 @@ def populate_azure_image_set(source_image_set, scaled_images, azure_album_object
   azure_album_object.push(azure_image_set)
 end
 
-albums = ['MountShasta'] #['Netherlands', 'Barcelona', 'Netherlands', 'Rome', 'Peru', 'Japan', 'Colorado', 'Ecuador']
+albums = ['MountBaker'] #'Barcelona', 'Netherlands', 'Rome', 'Peru', 'Japan', 'Colorado', 'Ecuador', 'MountShasta', 'MountBaker']
 DOWNLOAD_DIR = '/tmp'
 resized_images = Albatross::ResizedImages.new
 metadata_store = Albatross::Metadata::Store.new
