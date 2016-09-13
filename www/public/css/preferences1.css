@@ -1,0 +1,245 @@
+/*@media screen and (min-width: 800px) {
+  body:before, body:after {
+      content: "";
+      position: fixed;
+      background: #ac4142;
+      left: 0;
+      right: 0;
+      height: 10px;
+  }
+
+  body:before {
+      top: 0;
+  }
+
+  body:after {
+      bottom: 0;
+  }
+
+  body {
+      border-left: 10px solid #ac4142;
+      border-right: 10px solid #ac4142;
+  }
+}*/
+
+/*
+ * Ludak main theme.
+ */
+
+.ludak-main-theme
+{
+  /*size and positioning*/
+  margin: 0;
+  display: inline;
+  box-sizing: border-box;
+
+  /*appearance*/
+  background-color: #FAFAFA;
+  color: #633E3E;
+}
+
+/*
+ * Masthead container.
+ * Center the content.
+ */
+
+.masthead-container
+{
+  /*size and positioning*/
+  display: inline-block;
+  padding: 0.3em 1em 0.3em 1em;
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 2em;
+  z-index: 1;
+
+  /*appearance*/
+  background-color: rgba(0,0,0,0.85);
+  border-color: rgba(0,0,0,1);
+  border-width: thick;
+}
+
+.masthead-contents a
+{
+  /*appearance*/
+  color: #ac4142;
+}
+
+.masthead-contents small
+{
+  /*appearance*/
+  font-size: 75%;
+  font-weight: 400;
+  color: #c0c0c0;
+}
+
+.masthead-link
+{
+  display: inline;
+  float: right;
+  height: 100%;
+}
+
+.masthead-link a
+{
+  opacity: 0.70;
+}
+
+.masthead-link a:hover
+{
+  height: 100px;
+  border-top:100% solid #c0c0c0;
+  padding: 0.15em 0.5em 0.15em 0.5em;
+  text-decoration: none;
+  background: #ac4142;
+  color: rgba(0,0,0,0.85);
+  opacity: 1.0;
+}
+
+@mixin .container-dimensions
+{
+  width: 100%;
+  height: 100%;
+}
+
+@mixin .round-corners
+{
+  border-radius: 5px;
+}
+
+.theme-base-08 .sidebar
+{
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.theme-base-08
+{
+  color: #633E3E;
+  background-color: #FAFAFA;
+}
+
+.content
+{
+  background-color: #FFFFFF;
+}
+
+.sidebar a
+{
+  color: #AC4142;
+}
+
+.storyImage
+{
+  border: 1px solid rgba(172,65,66,.5);
+}
+
+.storyCaption
+{
+  background-color: rgba(255,149,0,.1);
+  border-left: 6px solid rgba(172,65,66,.5);
+  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  padding-left: 6px;
+  text-align: left;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+.storyItem
+{
+  margin-bottom: 50px;
+}
+
+
+/*Story image overlay div*/
+.story-image-overlay
+{
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.85);
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+#story-image-overlay-img
+{
+  /*appearance*/
+  .include round-corners;
+  display: block;
+
+  /*size and position*/
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  vertical-align: middle;
+}
+
+/*story-image-overlay-content-div*/
+.story-image-overlay-content-div
+{
+  /*size and position*/
+  .include .container-dimensions;
+  position: relative;
+}
+
+/*story-image-overlay-caption*/
+.story-image-overlay-caption
+{
+  /*appearance*/
+  .include round-corners;
+  background-color: rgba(0,0,0, 0.85);
+  transition: width 1s ease;
+
+  /*size and position*/
+  position: absolute;
+  z-index: 3;
+
+  /*text*/
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-size: .70rem;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.story-image-overlay-caption:hover
+{
+  right: 5px;
+}
+
+/*sidebar-toggle customizations*/
+.sidebar-toggle
+{
+  /*size and positioning*/
+  top: 0.5rem;
+  background-color: transparent;
+}
+
+/*content customizations*/
+.content
+{
+  padding-top: 4rem;
+}
+
+/*headroom*/
+.headroom
+{
+  transition: transform .25s ease-in-out;
+  will-change: transform;
+}
+
+.headroom--pinned
+{
+  transform: translateY(0);
+}
+
+.headroom--unpinned
+{
+    transform: translateY(-100%);
+}
