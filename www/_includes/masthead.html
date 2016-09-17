@@ -1,14 +1,14 @@
 <div class="masthead-container">
   <div class="masthead-contents">
-    <h3 style="margin: 0;display: inline">
+    <h2 class="masthead-title">
       <a href="/" title="Home">{{ site.title }}</a>
       <small>{{ site.tagline }}</small>
-    </h3>
+    </h2>
     {% for node in site.pages %}
       {% if node.title != null %}
         {% if node.layout == "page" %}
           <div class="masthead-link">
-            <small><a href="{{ node.url }}">{{ node.title|downcase }}</a></small>
+            <a href="{{ node.url }}">{{ node.title|downcase }}</a>
           </div>
         {% endif %}
       {% endif %}

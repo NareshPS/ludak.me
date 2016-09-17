@@ -30,8 +30,6 @@
 {
   /*size and positioning*/
   margin: 0;
-  display: inline;
-  box-sizing: border-box;
 
   /*appearance*/
   background-color: #FAFAFA;
@@ -46,18 +44,22 @@
 .masthead-container
 {
   /*size and positioning*/
-  display: inline-block;
-  padding: 0.3em 1em 0.3em 1em;
+  padding-left: 1em;
+  padding-right: 1em;
   position: fixed;
+  box-sizing: border-box;
   width: 100%;
-  max-width: 100%;
-  height: 2em;
   z-index: 1;
 
   /*appearance*/
   background-color: rgba(0,0,0,0.85);
   border-color: rgba(0,0,0,1);
   border-width: thick;
+}
+
+.masthead-contents
+{
+  /*size and positioning*/
 }
 
 .masthead-contents a
@@ -74,27 +76,37 @@
   color: #c0c0c0;
 }
 
+.masthead-title
+{
+  /*size and positioning*/
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0.25em 0em 0em 0em;
+}
+
 .masthead-link
 {
+  /*size and positioning*/
   display: inline;
   float: right;
-  height: 100%;
-}
+  padding: 0.75em 0.5em 0.75em 0.5em;
 
-.masthead-link a
-{
-  opacity: 0.70;
-}
-
-.masthead-link a:hover
-{
-  height: 100px;
-  border-top:100% solid #c0c0c0;
-  padding: 0.15em 0.5em 0.15em 0.5em;
+  /*appearance*/
   text-decoration: none;
+}
+
+.masthead-link:hover
+{
+  /*size and positioning*/
+
+  /*appearance*/
   background: #ac4142;
+}
+
+.masthead-link:hover a
+{
+  /*appearance*/
   color: rgba(0,0,0,0.85);
-  opacity: 1.0;
 }
 
 @mixin .container-dimensions
